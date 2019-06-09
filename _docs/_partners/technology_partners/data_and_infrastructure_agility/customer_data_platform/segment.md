@@ -23,11 +23,10 @@ When configuring Braze from Segment, you'll have many options to customize the f
 
 |Name| Description |
 |---|---|
-|App Identifier| Once called the API Key. Found in the Developer Console. |
-|REST API Key| Once called the "App Group Identifier". Found in the Developer Console. |
-|Custom API Endpoint| Given to you by your Braze support or account representative. For example: `https://sdk.api.braze.com`. If you were not given a custom API Endpoint, leave this setting blank. |
-|Appboy Datacenter| This is your [Braze Instance]({{ site.baseurl }}/user_guide/administrative/access_braze/braze_instances/). Select it from the drop down. |
-|Custom REST API Endpoint| Given to you by your Braze support or account representative. For example: `https://rest.iad.braze.com`. If you were not given a custom API Endpoint, leave this setting blank. |
+|App Identifier| Once called the API Key. Found in the Developer Console. App API Key found in the "Manage App Group" or "Developer Console" page on the Braze Dashboard. This field is necessary for SDK integrations to work. |
+|REST API Key| Dashboard Rest API Key for making API calls. Once called the "App Group Identifier". Found in the Developer Console.  Make sure the key has permission to access the users/track endpoint.|
+|Custom API Endpoint| Given to you by your Braze support or account representative. For example: `sdk.api.braze.com`. If you were not given a custom API Endpoint, leave this setting blank. (No need to add `https://`, it will added automatically)|
+|Appboy Datacenter| = Cluster. US or EU depending on your location. This is your [Braze Instance]({{ site.baseurl }}/user_guide/administrative/access_braze/braze_instances/). Select it from the drop down. |
 |Safari Website Push ID| Safari requires a Website Push ID to send push. [More on this here]({{ site.baseurl }}/developer_guide/platform_integration_guides/web/push_notifications/integration/#step-5-configure-safari-push). |
 |Braze Web SDK Version| Which version of the Braze Web SDK you have integrated. You should have found this out during your initial integration process, but if you're unsure, reach out to your account manager or Braze support. |
 
@@ -69,8 +68,6 @@ For more details regarding Braze's SDKs, please refer to our [iOS][34], [Android
 # Server-to-Server Integration {#segment-1}
 
 The server-to-server integration forwards data from Segment to Braze's REST API. This integration is **only** used in association with Segment's [server-side libraries][36], such as their Ruby or Go SDKs. Enable the integration by setting your [App Group's REST API Key][39] and Braze's [REST API endpoint][40] for your corresponding data center in your destination settings on Segment's dashboard.
-
-![Segment's Go Integration][43]
 
 Unlike the side-by-side integration, however, the server-to-server integration does not support any of Braze's UI features, such as in-app messaging, News Feed, Feedback or push notifications.
 
